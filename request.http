@@ -1,0 +1,33 @@
+GET http://localhost:8080/getUserByEmail?email=USD
+Accept: application/json
+
+###
+POST http://localhost:8080/registryNewUser
+Content-Type: application/json
+
+{
+  "email": "new",
+  "phoneNumber": 50,
+  "fio": "some_fio"
+}
+
+###
+POST http://localhost:8080/createNewPayment
+Content-Type: application/json
+
+{
+  "templateName": "",
+  "cardNumber": 54433255320,
+  "paymentSum": 45354
+}
+
+###
+POST http://localhost:8080/createNewTemplate
+Content-Type: application/json
+
+{
+  "templateName": "templateName",
+  "iban": "AO54433255320",
+  "paymentPurpose": "tuda",
+  "userAddressId" : 1
+}
