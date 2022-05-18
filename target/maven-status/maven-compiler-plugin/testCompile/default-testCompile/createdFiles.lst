@@ -1,1 +1,3 @@
 com\example\communalPayment\CommunalPaymentApplicationTests.class
+com\example\communalPayment\service\CommunalUserServiceTest.class
+com\example\communalPayment\service\UserAddressServiceTest.class

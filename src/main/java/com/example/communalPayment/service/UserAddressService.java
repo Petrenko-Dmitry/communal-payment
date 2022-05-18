@@ -2,6 +2,7 @@ package com.example.communalPayment.service;
 
 import com.example.communalPayment.dto.AddressDto;
 import com.example.communalPayment.entity.UserAddress;
+import com.example.communalPayment.exception.NotFoundException;
 import com.example.communalPayment.repository.UserAddressRepository;
 import com.example.communalPayment.utils.UserAddressUtils;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,8 @@ public class UserAddressService {
     }
 
     public UserAddress findById(Long id) {
-        return this.userAddressRepository.findById(id).orElseThrow();
+        return this.userAddressRepository.findById(id).orElseThrow(
+                () -> new NotFoundException("Can not find User address with id: " + id));
     }
 
     public AddressDto createNewAddress(AddressDto addressDto) {

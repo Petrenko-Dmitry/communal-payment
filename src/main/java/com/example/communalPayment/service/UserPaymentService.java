@@ -23,7 +23,8 @@ public class UserPaymentService {
     public PaymentDto createNewPayment(PaymentDto paymentDto) {
         var currentTimeMillis = System.currentTimeMillis();
 
-        paymentDto.setTemplateName(Strings.isNullOrEmpty(paymentDto.getTemplateName()) ? this.userTemplateService.getLastSavedTemplateName() : paymentDto.getTemplateName());
+        paymentDto.setTemplateName(Strings.isNullOrEmpty(paymentDto.getTemplateName()) ?
+                this.userTemplateService.getLastSavedTemplateName() : paymentDto.getTemplateName());
         paymentDto.setDateChange(currentTimeMillis);
         paymentDto.setDateCreation(currentTimeMillis);
         paymentDto.setPaymentStatus(PaymentStatus.NEW);
