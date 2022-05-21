@@ -31,7 +31,7 @@ public class CheckPaymentsScheduler {
 
         paymentWithNewStatus.forEach(payment -> {
 
-            if ((payment.getDateChange() - payment.getDateCreation()) > THREE_SECOND_IN_MILLI) {
+            if ((payment.getDateChange() - payment.getDateCreation()) >= THREE_SECOND_IN_MILLI) {
                 PaymentStatus.setRandomStatus(payment);
             }
             payment.setDateChange(System.currentTimeMillis());
