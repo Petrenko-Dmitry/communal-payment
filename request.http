@@ -33,7 +33,48 @@ Content-Type: application/json
   "templateName": "templateName",
   "iban": "AO54433255320",
   "paymentPurpose": "tuda",
-  "userAddressId" : 2
+  "userAddressId": 1
+}
+
+###
+POST http://localhost:8080/createNewPayment
+Content-Type: application/json
+
+{
+  "templateName": "templateName",
+  "cardNumber": 54433255320,
+  "paymentSum": 45354
+}
+
+###
+POST http://localhost:8080/createNewTemplate
+Content-Type: application/json
+
+{
+  "templateName": "templateName2",
+  "iban": "AO54433129820",
+  "paymentPurpose": "tuda2",
+  "userAddressId": 2
+}
+
+###
+POST http://localhost:8080/createNewPayment
+Content-Type: application/json
+
+{
+  "templateName": "",
+  "cardNumber": 54433255320,
+  "paymentSum": 45354
+}
+
+###
+POST http://localhost:8080/createNewPayment
+Content-Type: application/json
+
+{
+  "templateName": "",
+  "cardNumber": 54433255320,
+  "paymentSum": 45354
 }
 
 ###
